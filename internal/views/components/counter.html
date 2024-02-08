@@ -1,0 +1,10 @@
+{{ block counter() }}
+<div class="flex-col">
+    {{ include "../partials/counter.html" }}
+    
+    <div class="mt-4">
+        <button class="bg-indigo-500 text-white text-sm px-4 py-2 rounded" hx-post="/inc" hx-target="#counter_value">Increment</button>
+        <button class="bg-indigo-500 text-white text-sm px-4 py-2 rounded" hx-post="/dec" hx-target="#counter_value">Decrement</button>
+    </div>
+</div>
+{{ end }}

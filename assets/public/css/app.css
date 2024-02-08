@@ -1,0 +1,17 @@
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html, div, main, section, nav, 
+header, footer, span, form, fieldset {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Helvetica Neue";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
