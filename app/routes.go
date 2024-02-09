@@ -6,6 +6,7 @@ import (
 	"github.com/CloudyKit/jet/v6"
 	"github.com/go-chi/chi/v5"
 	"github.com/keuller/goapp/assets"
+	"github.com/keuller/goapp/internal/anime"
 	"github.com/keuller/goapp/internal/counter"
 	"github.com/keuller/goapp/internal/views"
 )
@@ -33,4 +34,7 @@ func registerAppRoutes(router *chi.Mux) {
 
 	router.Post("/inc", counter.Increment)
 	router.Post("/dec", counter.Decrement)
+
+	router.Get("/animes", anime.GetAnimes)
+	router.Post("/animes", anime.SaveAnime)
 }

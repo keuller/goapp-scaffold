@@ -1,0 +1,48 @@
+{{ extends "../layout.html" }}
+
+{{ block body() }}
+<div class="bg-white rounded-lg p-4" x-data="{ open: false }">
+    <div class="flex justify-between mb-2">
+        <h1 class="text-2xl font-bold py-2"> Anime List </h1>
+        <button type="button" @click="open = true" class="btn">Add a New</button>
+    </div>
+
+    <table class="table-auto text-center text-sm font-light w-full">
+        <thead class="border-b font-medium bg-indigo-500 text-white">
+            <tr>
+                <th scope="col" class="px-6 py-2"> &nbsp; </th>
+                <th scope="col" class="px-6 py-2"> Name </th>
+                <th scope="col" class="px-6 py-2"> Completed? </th>
+                <th> Actions </th>
+            </tr>
+        </thead>
+        <tbody id="content">
+        {{ range _, row := animes }}
+            {{ include "./anime_row.html" . }}
+        {{ else }}
+        <tr>
+            <td colspan="4" class="py-4 text-center text-xl font-bold text-indigo-600">No animes found!</td>
+        </tr>
+        {{ end }}
+        </tbody>
+    </table>
+    
+    <dialog x-show="open" x-dialog="open = false">
+        <p class="font-semibold text-xl border-b border-indigo-400">New Anime</p>
+        <form id="animeForm" class="flex-col" method="dialog">
+            <div class="">
+                <label class="text-sm" for="name">Name:</label>
+                <input id="name" type="text" name="name" maxlength="50" />
+            </div>
+            <div class="py-2">
+                <input id="complete" type="checkbox" name="complete" />
+                <label>Completed?</label>
+            </div>
+            <div class="flex justify-end">
+                <button type="button" class="btn btn-indigo mr-2" hx-post="/animes" hx-target="#content" hx-swap="beforeend">Save</button>
+                <button type="button" class="btn" @click="open = false">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+</div>
+{{ end }}

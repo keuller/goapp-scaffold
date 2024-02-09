@@ -10,7 +10,7 @@ import (
 var public embed.FS
 
 func GetAssetsHandler() (http.Handler, error) {
-	staticAssets, err := fs.Sub(public, "assets")
+	staticAssets, err := fs.Sub(public, "public")
 	if err != nil {
 		return nil, err
 	}

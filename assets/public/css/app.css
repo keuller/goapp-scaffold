@@ -4,6 +4,13 @@
   box-sizing: inherit;
 }
 
+:root {
+    --btn-bg: #7e58eb;
+    --btn-color: #3e2181;
+    --btn-font-size: 14px;
+    --btn-ppading: 8px;
+}
+
 html, div, main, section, nav, 
 header, footer, span, form, fieldset {
   box-sizing: border-box;
@@ -14,4 +21,9 @@ body {
     "Ubuntu", "Helvetica Neue";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-indigo {
+    color: white;
+    background-color: #7e58eb !important;
 }

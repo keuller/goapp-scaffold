@@ -1,0 +1,14 @@
+<tr class="class="border-b dark:border-neutral-500">
+    <td class="w-[120px]">{{ row.ID }}</td>
+    <td class="text-left">{{ row.Name }}</td>
+    <td class="w-[80px] text-center"> 
+        {{if row.Complete }}
+            <span class="inline-block whitespace-nowrap rounded-[0.27rem] bg-green-100 px-[0.65em] pb-[0.35em] pt-[0.35em] text-center align-baseline text-[0.85em] font-bold leading-none text-green-700">Yes</span>                    
+        {{ else }}
+            <span class="inline-block whitespace-nowrap rounded-[0.27rem] bg-red-100 px-[0.65em] pb-[0.35em] pt-[0.35em] text-center align-baseline text-[0.85em] font-bold leading-none text-red-700">No</span>
+        {{ end }}
+    </td>
+    <td class="w-[120px]">
+        <button class="bg-red-100 text-center align-baseline text-red-700 rounded px-4 py-1">Remove</button>
+    </td>
+</tr>
