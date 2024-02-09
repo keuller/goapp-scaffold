@@ -20,14 +20,14 @@ func registerAppRoutes(router *chi.Mux) {
 		page, _ := views.GetPage("./pages/index.html")
 
 		vars := make(jet.VarMap)
-		// TODO - to use a shared context to get the updated counter value
-		vars.Set("value", 0)
+		vars.Set("value", counter.GetCounterValue())
 
 		page.Execute(res, vars, nil)
 	})
 
 	router.Get("/about", func(res http.ResponseWriter, req *http.Request) {
 		page, _ := views.GetPage("./pages/about.html")
+
 		page.Execute(res, nil, nil)
 	})
 

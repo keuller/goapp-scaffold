@@ -10,6 +10,10 @@ import (
 
 var value atomic.Int32
 
+func GetCounterValue() int32 {
+	return value.Load()
+}
+
 func Increment(res http.ResponseWriter, req *http.Request) {
 	page, _ := views.GetPage("./partials/counter.html")
 
